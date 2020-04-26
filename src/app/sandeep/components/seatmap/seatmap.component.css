@@ -1,0 +1,22 @@
+td
+{
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+td:hover
+{
+    background-color: beige;
+}
+.action-panel
+{
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.seatlayout
+{
+    overflow: scroll;
+    scrollbar-width: none;
+}
+

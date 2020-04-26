@@ -1,0 +1,23 @@
+<div class="d-flex container justify-content-around align-items-center vh-100">
+<div class="card p-0 col-sm-6 shadow">
+    <div class="card-header">
+        <h4 class="card-title">Login</h4>
+    </div>
+    <div class="card-body">
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" class="form-control"  type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" class="form-control" type="password" name="password">
+            </div>
+            <div class="form-group d-flex justify-content-end">
+                <a href="/signup" class="text-uppercase btn btn-danger m-2">Signup</a>
+                <input id="submit" class="text-uppercase btn btn-primary m-2" type="submit" value="Login" name="">
+            </div>
+        </form>
+    </div>
+</div>
+</div>

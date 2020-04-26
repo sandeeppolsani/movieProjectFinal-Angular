@@ -1,0 +1,27 @@
+.text-large
+{
+    font-size: x-large;
+    color: gray;
+}
+.text-small
+{
+    font-size: x-small;
+    color: gray; 
+}
+.dotted
+{
+    border-style: dotted;
+}
+.dashed
+{
+    border-style: dashed;
+}
+hr
+{
+    margin-top: 0.4rem !important;
+    margin-bottom: 0.4rem !important;
+}
+.orderSummary ul li
+{
+    margin: 0.5rem;
+}

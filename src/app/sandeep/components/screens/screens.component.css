@@ -1,0 +1,13 @@
+.shows
+{
+    box-sizing: border-box;
+}
+.shows span
+{
+    margin: 0.4rem;;
+}
+.title-panel
+{
+    padding: 0.5rem;
+    margin: 0.5rem;
+}

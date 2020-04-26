@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "springAngular": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "springAngular"
+    }
+  },
+  "defaultProject": "springAngular",
+  "cli": {
+    "analytics": "d595d3f4-0fa7-4c69-9f89-aa2db7dac773"
+  }
 }
