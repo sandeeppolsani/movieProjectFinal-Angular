@@ -1,0 +1,11 @@
+<div class="movies row flex-wrap justify-content-around  " >
+    <div class="card shadow rounded p-1 col-sm-3 m-2 " *ngFor="let movie of movies">
+        <img class="card-img-top " [src]="movie.imageLink" alt="Image">
+        <div class="card-body bg-light ">
+            <h5 class="card-title large">{{movie.movieName}}</h5>
+            <div class="action d-flex justify-content-end mt-2">
+                <div class="w-50 btn btn-sm btn-outline-primary text-center" (click)="attach(movie)">Attach</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+
+<div class="row justify-content-end" *ngIf="active=='viewScreen'">
+  <button type="button" class="btn btn-primary btn-sm" (click)="addScreenActive()" >Add new Screen</button>
+</div>
+<div *ngIf="active=='viewScreen'">
+  <div class="d-flex flex-column justify-content-center" *ngIf="!screens.length">
+  <h4 class="text-center title" >
+    No screens available
+  </h4>
+</div>
+
+<table class="table table-bordered table-hover col-md-10 " *ngIf="screens.length">
+    <thead>
+      <th>Screen Id</th>
+      <th>Screen Name</th>
+      <th>Hall Height</th>
+      <th>Hall Width</th>  
+      <th>Action</th>
+      
+    </thead>
+    <tbody>
+      <tr *ngFor="let scr of screens">
+        <td>{{scr.screenId}}</td>
+        <td>{{scr.screenName}}</td>
+        <td>{{scr.hallHeight}}</td>
+        <td>{{scr.hallWidth}}</td>
+       <td>
+
+        <span class="m-1 btn btn-primary btn-sm" (click)=" selectScreenActivateAddShow(scr)">Add show</span> 
+        <span class="m-1 btn btn-primary btn-sm" (click)=" selectScreenActivateViewShow(scr)">View shows</span> 
+        <span class="btn btn-danger btn-sm" (click)="delete(scr.screenId)">Delete</span>
+
+       </td>
+      </tr>
+    </tbody>
+</table>
+
+</div>
+
+<div *ngIf="active=='addShow'">
+  <div class="d-flex justify-content-end">
+    <span class="btn btn-sm btn-info mr-5" (click)="viewScreenActive()">View Screens</span>
+</div>
+<app-add-show [theatre]="theatre" [screen]="selectedScreen"></app-add-show>
+</div>
+
+
+<div *ngIf="active=='addScreen'">
+  <div class="d-flex justify-content-end">
+    <span class="btn btn-sm btn-info mr-5" (click)="viewScreenActive()">View Screens</span>
+</div>
+  <app-add-screen [theatre]="theatre"></app-add-screen>
+</div>
+
+
+<div *ngIf="active=='viewShow'">
+  <div class="d-flex justify-content-end">
+    <span class="btn btn-sm btn-info mr-5" (click)="viewScreenActive()">View Screens</span>
+</div>
+  <app-view-show [screen]="selectedScreen"></app-view-show>
+</div>
+

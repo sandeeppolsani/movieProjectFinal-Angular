@@ -1,18 +1,60 @@
 <div class="container">
-    <div class="text-center bg-success rounded large result p-5 text-white">
+    <div *ngIf="ticket!=undefined" class="text-center bg-success rounded large result p-5 text-white">
         Done
+    </div>
+    <div *ngIf="ticket==undefined" class="text-center bg-danger rounded large result p-5 text-white">
+        Failed
     </div>
     <dt>Ticket Details</dt>
     <hr/>
-    <div class="m-3  row">
+    <div class="m-3  row"  *ngIf="ticket!=undefined">
         <div class="movieDetails shadow-sm col-sm-6 d-flex w-100 border p-1">
-            <div class="card col-4 p-0 border-0">
-                <img class="card-img-top" src="https://scontent.fhyd1-2.fna.fbcdn.net/v/t1.0-0/c0.22.200.200a/p200x200/317357_212466472141228_682523_n.jpg?_nc_cat=101&_nc_sid=cdbe9c&_nc_ohc=7LJFf6Rf5J8AX_wA_vK&_nc_ht=scontent.fhyd1-2.fna&oh=e134ae5a4be064ae342abd516560ef1c&oe=5EC98109" alt="Movie">
-            </div>
+            <!-- <div class=" col-4 p-0 border-0 d-table-cell"> -->
+                <img class="card-img-top col-4 p-0"  [src]="ticket.movie.imageLink" alt="Movie">
+            <!-- </div> -->
             <div class="card flex-grow-1 border-0">
                 <div class="card-body">
-                    <h5 class="card-title">Movie Details</h5>
-                    <p class="card-text">Content</p>
+                    <h5 class="card-title">{{ticket.movie.movieName}}</h5>
+                    <table class="table table-borderless">
+                        <tr>
+                            <td>BookingId</td>
+                            <td>{{ticket.bookingId}}</td>
+                        </tr>
+                        <tr>
+                            <td>TicketId</td>
+                            <td>{{ticket.ticket.ticketId}}</td>
+                        </tr>
+                        <tr>
+                            <td>TransactionId</td>
+                            <td>{{ticket.transactionId}}</td>
+                        </tr>
+                        <tr>
+                            <td>Show Time</td>
+                            <td>{{ticket.show.showStartTime | date:'short'}}</td>
+                        </tr>
+                        <tr>
+                            <td>number of Seats</td>
+                            <td>{{ticket.ticket.noOfSeats}}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Cost</td>
+                            <td>{{ticket.totalCost}}</td>
+                        </tr>
+                        <tr>
+                            <td>Show Name</td>
+                            <td>{{ticket.show.showName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Screen Name</td>
+                            <td>{{ticket.show.screenName}}</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td>{{ticket.show.theatre.theatreName}}, {{ticket.show.theatre.theatreCity}}</td>
+                        </tr>
+
+
+                    </table>
                 </div>
             </div>
         </div>

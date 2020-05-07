@@ -1,12 +1,15 @@
 td
 {
-    padding:10px 15px 10px 15px;
+    padding:0px 5px;
     cursor: pointer;
+    background-color: white;
 }
-td:hover
+td:hover .icon
 {
-    background-color: beige;
+    color: rgb(73, 255, 73);
 }
+
+
 .action-panel
 {
     bottom: 0;
@@ -14,9 +17,29 @@ td:hover
     width: 100%;
 }
 
+.demoicon
+{
+    color: rgb(73, 255, 73);
+}
+
+.bg-gray{
+    background-color: rgba(196, 192, 192, 0.507);
+}
+
 .seatlayout
 {
-    overflow: scroll;
+    overflow-x: scroll;
+    
     scrollbar-width: none;
 }
 
+.bg-screen
+{
+    background-color: rgb(41, 230, 167);
+}
+
+
+.selected
+{
+    color: rgb(73, 255, 73);
+}

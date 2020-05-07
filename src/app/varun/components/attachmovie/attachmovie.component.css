@@ -1,0 +1,15 @@
+.card
+{
+    /* min-width: 30% !important; */
+    height: 200px !important;
+}
+.card img
+{
+    height: 55% !important;
+}
+
+.movies .card
+{
+    box-sizing: border-box;
+    /* border:0px; */
+}

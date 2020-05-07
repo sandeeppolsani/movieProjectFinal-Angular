@@ -1,0 +1,23 @@
+<h2 class="">Add Screen</h2>
+<small class="text-success" *ngIf="successMsg">{{successMsg}}</small>
+<small class="text-danger" *ngIf="errMsg">{{errMsg}}</small>
+<div class="d-flex justify-content-center">
+  <form (ngSubmit)="createScreen()"> 
+      {{theatre.theatreName}}
+    <div class="row">
+        <div class="col-md-5">
+            <input type="text" placeholder="enter screenName" id="screenName" name="screenName" [(ngModel)]="scr.screenName" class="form-control">
+        </div> 
+        <div class="col-md-5">
+            <input type="text" placeholder="enter hallHeight" id="hallHeight" name="hallHeight" [(ngModel)]="scr.hallHeight" class="form-control">
+        </div> 
+        <div class="col-md-5">
+            <input type="text" placeholder="enter hallWidth" id="hallWidth" name="hallWidth" [(ngModel)]="scr.hallWidth" class="form-control">
+       </div>
+    </div>
+<div class="d-flex justify-content-end">
+    <input type="submit" value="Add Screen" class="btn btn-danger">
+</div>
+</form>
+</div>
+

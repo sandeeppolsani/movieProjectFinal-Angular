@@ -1,14 +1,31 @@
 <div class=" position-relative">
-  <div class="title form-control-lg m-2">
-    Movie Booking
+  <div class="d-flex justify-content-between">
+    <div class="title form-control-lg">
+      Movie Booking
+    </div>
+    <div class="nav-action-panel mr-4 m-2">
+      <span class="btn btn-sm btn-outline-danger text-uppercase m-1" *ngIf="isLoggedIn()" (click)="logout()">Logout</span>
+      <span class="btn btn-sm btn-outline-info text-uppercase m-1" *ngIf="isLoggedIn()"  data-toggle="modal" data-target="#ticketsview">Get Tickets</span>
+      <span class="btn btn-sm btn-outline-success text-uppercase m-1"  *ngIf="!isLoggedIn()"  (click)="gotologin()">Login</span>
+    </div>
   </div>
-  <hr/>
-  <!-- <app-login></app-login> -->
-  <!-- <app-home></app-home> -->
-  <!-- <app-seatmap></app-seatmap> -->
-  <!-- <app-booking></app-booking> -->
-  <!-- <app-payment></app-payment> -->
-  <!-- <app-pay-result></app-pay-result> -->
-  <!-- <app-signup></app-signup> -->
-  <app-profile></app-profile>
+  <hr class="mt-0"/>
+  <router-outlet></router-outlet>
+</div>
+
+
+<div class="modal fade" id="ticketsview" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog w-75 modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">My Tickets</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body d-flex justify-content-around">
+        <app-tickets-view></app-tickets-view>
+      </div>
+    </div>
+  </div>
 </div>

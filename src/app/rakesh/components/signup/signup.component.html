@@ -1,17 +1,32 @@
 <div class="d-flex container justify-content-around align-items-center vh-100">
-    <div class="card p-0 col-sm-6 shadow">
+    <div class="card p-0 col-sm-6 shadow" >
         <div class="card-header">
-            <h4 class="card-title">Login</h4>
+            <h4 class="card-title">Signup</h4>
         </div>
-        <div class="card-body">
-            <form action="/login" method="post">
+        <div class="card-body" >
+            <div class="row">
+                <div class="col-12 bg-danger text-white text-center rounded" *ngIf="errMsg" >{{errMsg}}</div>
+            </div>
+            <form action="/signup" method="post" #signupForm="ngForm" (ngSubmit)="submit(signupForm)">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" class="form-control"  type="email" name="email">
+                    <input id="email" class="form-control"  type="email" name="email" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="email">Username</label>
+                    <input id="username" class="form-control"  type="text" name="username" required ngModel>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" class="form-control" type="password" name="password">
+                    <input id="password" class="form-control" type="password" name="password" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="password">Confirm Password</label>
+                    <input id="confirmpassword" class="form-control" type="password" name="confirmPassword" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input id="contact" class="form-control"  type="text" name="contact" required ngModel>
                 </div>
                 <div class="form-group d-flex justify-content-end">
                     <a href="/signup" class="text-uppercase btn btn-danger m-2">Signup</a>
@@ -20,5 +35,7 @@
             </form>
         </div>
     </div>
+
     </div>
+
     

@@ -1,1 +1,54 @@
-<p>show works!</p>
+<div class="container">
+    <div class="movieDetails row justify-content-center w-100 shadow-sm p-3">
+        <div class="card col-sm-4 border-0">
+            <img class="card-img-top" src="https://scontent.fhyd1-2.fna.fbcdn.net/v/t1.0-0/c0.22.200.200a/p200x200/317357_212466472141228_682523_n.jpg?_nc_cat=101&_nc_sid=cdbe9c&_nc_ohc=7LJFf6Rf5J8AX_wA_vK&_nc_ht=scontent.fhyd1-2.fna&oh=e134ae5a4be064ae342abd516560ef1c&oe=5EC98109" alt="Movie">
+        </div>
+        <div class="card bg-light col-sm-8 border-0">
+            <div class="card-body">
+                <p class="card-title">Movie Details</p>
+                <hr class="m-0"/>
+                <ul class="mt-1 list-unstyled" *ngIf="show!=undefined">
+                    <li class=" justify-content-between d-flex">
+                        <span>Movie</span>
+                        <span>{{show.movie.movieName}}</span>
+                    </li>
+                    <li class=" justify-content-between d-flex">
+                        <span>showName</span>
+                        <span>{{show.showName}}</span>
+                    </li>
+                    <li class=" justify-content-between d-flex">
+                        <span>Start Time</span>
+                        <span>{{show.showStartTime | date:'medium'}}</span>
+                    </li>
+                    <li class=" justify-content-between d-flex">
+                        <span>End Time</span>
+                        <span>{{show.showEndTime | date:'medium'}}</span>
+                    </li>
+                    <li class=" justify-content-between d-flex">
+                        <span>Screen</span>
+                        <span>{{show.screen.screenName}}</span>
+                    </li>
+                    <li class=" justify-content-between d-flex">
+                        <span>Theatre</span>
+                        <span>{{show.theatre.theatreName}}</span>
+                    </li>
+                    <li class=" justify-content-between d-flex">
+                        <span>City</span>
+                        <span>{{show.theatre.theatreCity}}</span>
+                    </li>
+                    <li class=" justify-content-end mt-2 mr-0 d-flex">
+                        <div class="btn btn-sm bg-light shadow-sm pl-3 pl-3 ml-3">
+                            Trailer
+                            <span class="badge badge-danger material-icons">play_arrow</span>
+                        </div>
+                        <div class="btn btn-sm btn-primary pl-3 pl-3 ml-3 text-white">
+                            Available Seats
+                            <span class="badge badge-light">13</span>
+                        </div>
+                        <div class="btn right btn-sm btn-success pl-3 pr-3 ml-3 text-white ">Book</div> 
+                    </li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+</div>

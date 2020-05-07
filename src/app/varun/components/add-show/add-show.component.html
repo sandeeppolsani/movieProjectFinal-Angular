@@ -1,0 +1,32 @@
+<div >
+    <h4 class="text-center">Add Show</h4>
+    <small class="text-danger" >  </small>
+  <form (ngSubmit)="createShow()">
+    <div class="row justify-content-start">
+        <h6>Movie Panel select a movie </h6>
+        <div class="col-12 d-flex nowrap overflow-auto noscrollbar">
+            <div class="movie-card" *ngFor="let movie of movies" [ngClass]="{'selected': movie==selectedmovie}" (click)="selectmovie(movie)">
+                <img [src]="movie.imageLink" alt="image">
+                <p class="mt-1 ml-1" >{{movie.movieName}}</p>
+            </div>
+        </div>
+        <hr/>
+         <div class="col-md-5 m-2">
+             <input type="datetime" placeholder="enter showStartTime" id="showStartTime" name="showStartTime" [(ngModel)]="sho.showStartTime" class="form-control">
+         </div> 
+         <div class="col-md-5 m-2">
+             <input type="datetime" placeholder="enter showEndTime" id="showEndTime" name="showEndTime" [(ngModel)]="sho.showEndTime" class="form-control">
+         </div> 
+         <div class="col-md-5 m-2">
+             <input type="text" placeholder="enter showName" id="showName" name="showName" [(ngModel)]="sho.showName" class="form-control">
+        </div>
+        
+        
+        <div class="row col-12 justify-content-end mr-2">
+            <span class="text-large m-2" *ngIf="selectedmovie!=undefined">selected movie: {{selectedmovie.movieName}}</span>
+            <input type="submit" value="Add Show" class="btn btn-danger">
+        </div>
+    </div>
+    </form>
+</div>
+

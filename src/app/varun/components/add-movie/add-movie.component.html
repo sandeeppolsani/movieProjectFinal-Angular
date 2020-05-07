@@ -1,0 +1,40 @@
+<div >
+    <h2 class="text-center">Add Movie</h2>
+  <form (ngSubmit)="createMovie()">
+      <div class="row  formdiv justify-content-around">
+ <div class="col-md-5">
+     <input type="text" placeholder="enter name" id="movieName" name="movieName" [(ngModel)]="mov.movieName" class="form-control">
+ </div> 
+ <div class="col-md-5">
+     <input type="text" placeholder="enter release year" id="releaseYear" name="releaseYear" [(ngModel)]="mov.releaseYear" class="form-control">
+ </div> 
+ <div class="col-md-5">
+     <input type="text" placeholder="enter genre" id="genre" name="genre" [(ngModel)]="mov.genre" class="form-control">
+</div>
+<div class="col-md-5">
+    <input type="text" placeholder="enter directorname" id="director" name="director" [(ngModel)]="mov.director" class="form-control">
+</div >
+<div class="col-md-5">
+    <input type="text" placeholder="enter runtime" id="runtime" name="runtime" [(ngModel)]="mov.runtime" class="form-control">
+</div>
+<div class="col-md-5">
+    <input type="text" placeholder="enter langugage" id="runtime" name="language" [(ngModel)]="mov.language" class="form-control">
+</div>
+<div class="col-md-5">
+    <input type="text" placeholder="enter heroname" id="hero" name="hero" [(ngModel)]="mov.hero" class="form-control">
+</div>
+<div class="col-md-5">
+    <input type="text" placeholder="enter heroinename" id="heroine" name="heroine" [(ngModel)]="mov.heroine" class="form-control">
+</div>
+<div class="col-md-5">
+    <input type="text" placeholder="paste ImageLink" id="heroine" name="imageLink" [(ngModel)]="mov.imageLink" class="form-control">
+</div>
+<div class="col-md-5">
+    <input type="text" placeholder="paste TrailerLink" id="heroine" name="trailerLink" [(ngModel)]="mov.trailerLink" class="form-control">
+</div>
+<div class="col-12 pr-5 row justify-content-end">
+    <input type="submit" value="Add Movie" class="btn btn-primary">
+</div>
+</div>
+</form>
+</div>

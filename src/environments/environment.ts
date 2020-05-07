@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  manishPort:'http://localhost:9604',
+  rakeshPort:'http://localhost:9602',
+  varunPort:'http://localhost:9601',
+  sandeepPort:'http://localhost:9600',
 };
 
 /*

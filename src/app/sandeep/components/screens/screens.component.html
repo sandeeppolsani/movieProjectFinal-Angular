@@ -1,38 +1,14 @@
+<div class="d-flex dates=
+ justify-content-center">
+</div>
 <ul class="list-group list-unstyled m-2">
-    <li class="list-group-item border-0 shadow-sm m-1 rounded-0">
+    <li class="list-group-item pt-1 border bg-light shadow-sm m-1 rounded-0" *ngFor="let theatre of theatres">
         <div class="title-panel">
-            <p class="title mb-0 ">Sridevi Mall</p>
+            <p class="title mb-0 name ">{{theatre.theatreName}}</p>
+            <hr class="m-0"/>
         </div>
-        <div class="shows d-flex flex-wrap">
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-        </div>
-    </li>
-    <li class="list-group-item border-0 shadow-sm m-1 rounded-0">
-        <div class="title-panel">
-            <p class="title mb-0 ">Sridevi Mall</p>
-        </div>
-        <div class="shows d-flex flex-wrap">
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-        </div>
-    </li>
-    <li class="list-group-item border-0 shadow-sm m-1 rounded-0">
-        <div class="title-panel">
-            <p class="title mb-0 ">Sridevi Mall</p>
-        </div>
-        <div class="shows d-flex flex-wrap">
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
-            <span class="border shadow-sm btn btn-sm rounded ">4:00 AM</span>
+        <div class="shows d-flex flex-wrap" >
+            <span class="border shadow-sm btn bg-white btn-sm rounded " (click)="selectShow(show)" *ngFor="let show of theatre.shows">{{show.showStartTime | date:'short'}}</span>
         </div>
     </li>
 </ul>

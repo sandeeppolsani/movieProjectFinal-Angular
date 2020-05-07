@@ -3,15 +3,16 @@
     <div class="card-header">
         <h4 class="card-title">Login</h4>
     </div>
+    
     <div class="card-body">
-        <form action="/login" method="post">
+        <form action="/login" method="post" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" class="form-control"  type="email" name="email">
+                <input id="email" class="form-control"  type="email"  name="username" ngModel required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" class="form-control" type="password" name="password">
+                <input id="password" class="form-control" type="password" name="password" ngModel required>
             </div>
             <div class="form-group d-flex justify-content-end">
                 <a href="/signup" class="text-uppercase btn btn-danger m-2">Signup</a>

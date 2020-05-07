@@ -4,8 +4,8 @@
     <form action="/pay" method="post">
         <div class="form-group">
             <label for="payment type">Selected Payment Method</label>
-            <select class="form-control dropdown">
-                <option>Payment Method </option>
+            <select class="form-control dropdown" >
+                <option disabled>Payment Method </option>
                 <option>Credit Card</option>
                 <option>Debit Card</option>
                 <option>UPI</option>
@@ -19,8 +19,8 @@
                 <img src="" alt="none">
             </div>
             <label>clarification questions</label>
-            <input type="text" class="form-control" name="clarification" > 
+            <input type="text" class="form-control" [(ngModel)]="result" placeholder="enter yes and submit" name="clarification" > 
         </div>
-        <input type="submit" value="Pay" class="text-uppercase btn btn-primary m-3 float-right pl-3 pr-3"> 
+        <input type="submit" value="Pay" *ngIf="result=='yes'" class="text-uppercase btn btn-primary m-3 float-right pl-3 pr-3" (click)="makePayment()"> 
     </form>
 </div>

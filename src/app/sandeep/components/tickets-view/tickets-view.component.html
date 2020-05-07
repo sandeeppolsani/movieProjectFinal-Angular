@@ -1,0 +1,56 @@
+<div class="row flex-column overflow-auto" *ngIf="tickets!=undefined && tickets.length!=0">
+    <div class="movieDetails shadow-sm  d-flex w-100 border p-1 m-2"  *ngFor="let ticket of tickets">
+        <!-- <div class=" col-4 p-0 border-0 d-table-cell"> -->
+            <img class="card-img-top col-4 p-0"  [src]="ticket.bookingRef.movie.imageLink" alt="Movie">
+        <!-- </div> -->
+        <div class="card flex-grow-1 border-0">
+            <div class="card-body">
+                <h5 class="card-title">{{ticket.bookingRef.movie.movieName}}</h5>
+                <table class="table table-borderless">
+                    <tr>
+                        <td>BookingId</td>
+                        <td>{{ticket.bookingRef.bookingId}}</td>
+                    </tr>
+                    <tr>
+                        <td>TicketId</td>
+                        <td>{{ticket.ticketId}}</td>
+                    </tr>
+                    <tr>
+                        <td>TransactionId</td>
+                        <td>{{ticket.bookingRef.transactionId}}</td>
+                    </tr>
+                    <tr>
+                        <td>Show Time</td>
+                        <td>{{ticket.bookingRef.show.showStartTime | date:'short'}}</td>
+                    </tr>
+                    <tr>
+                        <td>number of Seats</td>
+                        <td>{{ticket.noOfSeats}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Cost</td>
+                        <td>{{ticket.bookingRef.totalCost}}</td>
+                    </tr>
+                    <tr>
+                        <td>Show Name</td>
+                        <td>{{ticket.bookingRef.show.showName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Screen Name</td>
+                        <td>{{ticket.bookingRef.show.screenName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td>{{ticket.bookingRef.show.theatre.theatreName}}, {{ticket.bookingRef.show.theatre.theatreCity}}</td>
+                    </tr>
+    
+    
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="flex-column d-flex justify-content-center" *ngIf="tickets!=undefined && tickets.length==0">
+    <span class="text-large">No tickets available</span>
+</div>

@@ -1,38 +1,12 @@
-<div class="d-flex justify-content-center h-75 seatlayout">
-    <table class="table-sm table-light ">
+<div class=" h-75  seatlayout row">
+    <div class="col-md-9">
+    <table class="border bg-dark  border shadow-sm rounded m-auto ">
         <tbody class="">
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
-                <td>5</td>
+            <tr *ngFor="let row of seats" class="m-2 ">
+                <td *ngFor="let seat of row" class="d-table-cell m-2 ">
+                    <i class="shadow-sm" [ngClass]="{' material-icons': seat.seatStatus
+                    !='AVAILABLE','selected':isSelected(seat),'icon material-icons-outlined':seat.seatStatus=='AVAILABLE'}" (click)="selectSeat(seat)">event_seat</i>
+                </td>
             </tr>
         </tbody>
         <tfoot class="bg-dark">
@@ -45,12 +19,39 @@
                 <td class="rounded p-0 pb-1"></td>
                 <td class="rounded p-0 pb-1"></td>
                 <td class="rounded p-0 pb-1"></td>
+                <td class="rounded p-0 pb-1"></td>
+                <td class="rounded p-0 pb-1"></td>
+                <td class="rounded p-0 pb-1"></td>
+                <td class="rounded p-0 pb-1"></td>
+                <td class="rounded p-0 pb-1"></td>
+                <td class="rounded p-0 pb-1"></td>
             </tr>
         </tfoot>
     </table>
 </div>
+    <div class="col-md-3 border-left align-self-center">
+        <ul class="list-unstyled">
+            <li>
+                <i class="material-icons">event_seat</i>
+                <span>Booked seats</span>
+            </li>
+            <li>
+                <i class="material-icons-outlined">event_seat</i>
+                <span>Available seats</span>
+            </li>
+            <li>
+                <i class="material-icons-outlined demoicon">event_seat</i>
+                <span>Selected seats</span>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <div class="action-panel bg-light border position-fixed  d-flex justify-content-end">
-    <div class="flex-grow-1 bg-secondary rounded p-2 text-white m-2">1 seat</div>
-    <input type="submit" class="btn text-white col-3 m-2 bg-info" value="Book">
+    <div class="flex-grow-1 bg-secondary rounded p-2 text-white m-2" *ngIf="selectedSeats.length>0">
+        {{selectedSeats.length}} seat
+        <i *ngIf="selectedSeats.length>1">s</i>
+        <span class="float-right price" >{{price}}</span>
+    </div>
+    <input type="submit" class="btn text-white col-3 m-2 bg-info" (click)="bookSeats()" value="Book">
 </div>

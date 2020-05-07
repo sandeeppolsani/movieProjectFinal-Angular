@@ -1,16 +1,54 @@
 <div class="container">
-    <form action="/location" method="POST">
+    <form action="" method="POST" #searchForm="ngForm" (ngSubmit)="onSearch(searchForm)">
         <div class="form-group ml-0 row justify-content-start">
           <small class=" w-100 form-control-sm">Search By city :</small>
-          <input type="text" name="" id="" class="w-75 form-control " placeholder="" aria-describedby="searchLocation">
-          <input type="submit" name="" id="" class="btn btn-light form-control w-auto ml-2" value="Search">
+          <input type="text" name="cityName" id="searchInput" class="w-75 form-control " placeholder="Enter Your CityName" aria-describedby="searchLocation" ngModel>
+          <input type="submit" name="searchBar" id="" class="btn btn-light form-control w-auto ml-2" value="Search">
         </div>
+        <small *ngIf="errMsg!=undefined" class="text-danger pl-2 m-1">{{errMsg}}</small>
     </form>
-    <hr/>
-    <div class="title">
+    <div class="mt-2 pl-3 title">
         Movies
     </div>
-    <!-- <app-movies></app-movies> -->
+    <hr/>
+    <div class="movies row flex-wrap justify-content-around  " >
+        <div class="card shadow rounded p-1 col-sm-3 m-2 " *ngFor="let movie of movies" >
+            <img class="card-img-top " [src]="movie.imageLink" alt="Image">
+            <div class="card-body bg-light ">
+                <h5 class="card-title large">{{movie.movieName}}</h5>
+                <small class="float-right" *ngIf="movie.language!=null">{{movie.language}}</small>
+                <hr class="m-0"/>
+                <div class="m-2 d-flex justify-content-between">
+                    <div class="box">
+                        <small class=" small">Hero</small>
+                        <div class="">{{movie.hero}}</div>
+                    </div>
+                    <div class="box">
+                        <small>Heroine</small>
+                        <div>{{movie.heroine}}</div>
+                    </div>
+                    <div class="box">
+                        <small>Director</small>
+                        <!-- <p>sujeeth</p> -->
+                        <div>{{movie.director}}</div>
+                    </div>
+                </div>
+                <div class="action d-flex justify-content-end">
+                    <a class="w-50 btn btn-sm bg-transparent text-center" [href]="movie.trailerLink" target="_blank">Trailer</a>
+                    <button class="btn  btn-sm w-50 btn-primary rounded-right" (click)="getScreens(movie.movieId)">Book </button>
+                </div>
+            </div>
+        </div>
+        <div class="align-self-center" *ngIf="movies==undefined || movies.length==0">
+            <h4 class="text-center"> uhoooo no movies available in </h4>
+            <h1 class="text-secondary text-center text-capitalize text-large d-block">{{searchForm.value.cityName}}</h1>
+            <div class="align-content-center">
+                <img src="https://image.shutterstock.com/image-vector/house-not-available-icon-flat-260nw-1030785001.jpg" class="card-img">
+            </div>
+        </div>
+    </div>
     <!-- <app-screens></app-screens> -->
-    <app-seatmap></app-seatmap>
+    <!-- <app-seatmap></app-seatmap> -->
 </div>
+
+

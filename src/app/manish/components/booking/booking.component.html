@@ -5,28 +5,34 @@
         <div class="ticket col-sm-6 pt-2 pb-2">
             <div class="movieDetails d-flex w-100 border p-1">
                 <div class="card col-4 p-0 border-0">
-                    <img class="card-img-top" src="https://scontent.fhyd1-2.fna.fbcdn.net/v/t1.0-0/c0.22.200.200a/p200x200/317357_212466472141228_682523_n.jpg?_nc_cat=101&_nc_sid=cdbe9c&_nc_ohc=7LJFf6Rf5J8AX_wA_vK&_nc_ht=scontent.fhyd1-2.fna&oh=e134ae5a4be064ae342abd516560ef1c&oe=5EC98109" alt="Movie">
+                    <img class="card-img-top" [src]="bookingDetails.movie.imageLink" alt="Movie">
                 </div>
                 <div class="card flex-grow-1 border-0">
                     <div class="card-body">
-                        <h5 class="card-title">Movie Details</h5>
-                        <p class="card-text">Content</p>
+                        <h5 class="card-title">{{bookingDetails.movie.movieName}}</h5>
+                        <p class="card-text">Hero :{{bookingDetails.movie.hero}}</p>
+                        <p class="card-text">Heroine :{{bookingDetails.movie.heroine}}</p>
+                        <p class="card-text">Director :{{bookingDetails.movie.director}}</p>
                     </div>
-                </div>
+                    <div class="d-flex flex-wrap">
+                        <span class="badge-pill badge-info m-1">{{bookingDetails.movie.language}}</span>
+                        <span class="badge-pill badge-info m-1">{{bookingDetails.movie.genre}}</span>
+                    </div >
+                    </div>
             </div>
             <div class="d-flex border">
                 <div class="col-2 text-center border ">
-                    <span class="text-large">2</span>
+                    <span class="text-large">{{bookingDetails.numOfSeats}}</span>
                     <br class="p-0 m-0"/>
                     <small class="text-small">Tickets</small>
                 </div>
                 <div class="flex-grow-1 text-center">
-                    <small>screen-1</small>
+                    <small>
+                        {{bookingDetails.show.theatre.theatreName}} Theatre,{{bookingDetails.show.theatre.theatreCity}}
+                    </small>
                     <br/>
                     <strong>
-                        <span>1</span>
-                        <span>2</span>
-                        <span>3</span>
+                        <span>{{bookingDetails.show.screenName}}</span>
                     </strong>
                 </div>
             </div>
@@ -37,24 +43,26 @@
                 <ul class="list-unstyled "> 
                     <li class="d-flex justify-content-between">
                         <span>Ticket amount</span>
-                        <span>300</span>
+                        <span>{{bookingDetails.totalCost}}</span>
                     </li>
                     <li class="d-flex justify-content-between">
                         <span>Quantity</span>
-                        <span>3</span>
-                    </li>
-                    <li class="d-flex justify-content-between">
-                        <span>Other fees</span>
-                        <span>30.0</span>
+                        <span>{{bookingDetails.numOfSeats}}</span>
                     </li>
                     <hr class="dashed"/>
                     <li class="d-flex justify-content-between">
                         <span class="text-uppercase">Total</span>
-                        <span>330</span>
+                        <span>{{bookingDetails.totalCost}}</span>
                     </li>
                 </ul>
-                <button class="btn btn-sm btn-primary pl-4 float-right pr-4">Pay</button>
+                <button class="btn btn-sm btn-primary pl-4 float-right pr-4" (click)="confirmBooking()">Pay</button>
             </div>
 
     </div>
+    <a [href]="bookingDetails.movie.trailerLink" target="_blank" class="shadow-sm btn btn-sm btn-light">
+      
+        <p class="m-0"> <i class="material-icons badge-danger text-white  rounded">play_arrow </i>
+            <span class="align-self-center ">Trailer</span>
+        </p>
+    </a>
 </div>

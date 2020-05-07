@@ -1,0 +1,15 @@
+.mod
+{
+    position: fixed;
+    width: 80%;
+    padding: 2rem;
+    margin: 100px auto;
+    z-index: 999;
+    background-color: red;
+    opacity: 1;
+}
+
+.modal-dialog
+{
+    max-width: 75% !important;
+}

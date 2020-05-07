@@ -1,0 +1,19 @@
+.movie-card img
+{
+    width: 100px;
+    height: 80% ;
+}
+
+.movie-card{
+    height: 150px;
+    transition-duration: 0.05s;
+    margin: 1rem;
+}
+.selected{
+    border:3px solid black;
+    padding: 5px;
+}
+.noscrollbar
+{
+    scrollbar-width: none;
+}

@@ -1,0 +1,32 @@
+
+
+<table class="table table-bordered table-hover col-md-10 ">
+    <thead>
+      <th>Movie Id</th>
+      <th>Movie Name</th>
+      <th>Release Year</th>
+      <th>Genre</th>  
+      <th>Director</th>
+      <th>Runtime</th>
+      <th>Hero</th>
+      <th>Heroine</th>
+      <th>Language</th>
+      <th>Action</th>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let mov of movies">
+        <td>{{mov.movieId}}</td>
+        <td>{{mov.movieName}}</td>
+        <td>{{mov.releaseYear}}</td>
+        <td>{{mov.genre}}</td>
+        <td>{{mov.director}}</td>
+        <td>{{mov.runtime}}</td>
+        <td>{{mov.hero}}</td>
+        <td>{{mov.heroine}}</td>
+        <td>{{mov.language}}</td>
+        <td><span (click)="deletemovie(mov.movieId)" class="btn btn-sm btn-danger text-uppercase">delete</span></td>
+      </tr>
+    </tbody>
+</table>
+

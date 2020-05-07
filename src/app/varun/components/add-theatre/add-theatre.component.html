@@ -1,0 +1,23 @@
+<div >
+    <h2 class="text-center">Add Theatre</h2>
+  <form (ngSubmit)="createTheatre()">
+    <div class="row formdiv justify-content-start"> 
+ <div class="col-md-5">
+     <input type="text" placeholder="enter theatreName" id="theatreName" name="theatreName" [(ngModel)]="the.theatreName" class="form-control">
+ </div> 
+ <div class="col-md-5">
+     <input type="text" placeholder="enter theatreCity" id="theatreCity" name="theatreCity" [(ngModel)]="the.theatreCity" class="form-control">
+ </div> 
+ <div class="col-md-5">
+     <input type="text" placeholder="enter managerName" id="managerName"  name="managerName"[(ngModel)]="the.managerName" class="form-control">
+</div>
+<div class="col-md-5 ">
+    <input type="text" placeholder="enter managerContact" id="managerContact" name="managerContact" [(ngModel)]="the.managerContact" class="form-control">
+</div>
+
+<div class="col-12 pr-5 row justify-content-end">
+    <input type="submit" value="Add Theatre" class="btn btn-primary">
+</div>
+</div>
+</form>
+</div>

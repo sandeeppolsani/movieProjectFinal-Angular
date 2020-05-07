@@ -1,0 +1,26 @@
+
+<div class="d-flex justify-content-start">
+  <span class="btn btn-primary btn-sm text-uppercase m-2" (click)="getActiveShows()">Active shows</span>
+  <span class="btn btn-dark btn-sm text-uppercase m-2" (click)="getAllShows()">All shows</span>
+</div>
+<table class="table table-bordered table-hover col-md-10 ">
+    <thead>
+      <th>Show Id</th>
+      <th>ShowStartTime</th>
+      <th>ShowEndTime</th>
+      <th>ShowName</th>  
+      <th>Action</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sho of shows">
+        <td>{{sho.showId}}</td>
+        <td>{{sho.showStartTime}}</td>
+        <td>{{sho.showEndTime}}</td>
+        <td>{{sho.showName}}</td>
+       <td><span class="btn btn-sm btn-danger" (click)="delete(sho.showId)">Delete</span></td>
+      </tr>
+    </tbody>
+</table>
+
+
+
